@@ -37,16 +37,7 @@ const ClientTable: React.FC<ClientTableProps> = ({
                 Apellido
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                Correo
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                Teléfono
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                 Estado
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                Fecha Creación
               </th>
               <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-300 uppercase tracking-wider">
                 Acciones
@@ -56,13 +47,13 @@ const ClientTable: React.FC<ClientTableProps> = ({
           <tbody className="divide-y divide-dark-700">
             {isLoading ? (
               <tr>
-                <td colSpan={7} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
+                <td colSpan={4} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
                   Cargando clientes...
                 </td>
               </tr>
             ) : clients.length === 0 ? (
               <tr>
-                <td colSpan={7} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
+                <td colSpan={4} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
                   No hay clientes para mostrar.
                 </td>
               </tr>
@@ -75,21 +66,12 @@ const ClientTable: React.FC<ClientTableProps> = ({
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                     {client.apellido || '-'}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    {client.correo || '-'}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    {client.telefono || '-'}
-                  </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       client.estado === 'Activo' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                     }`}>
                       {client.estado}
                     </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    {new Date(client.fecha_creacion).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex justify-end space-x-2">
