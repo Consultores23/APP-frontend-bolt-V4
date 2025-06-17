@@ -25,8 +25,6 @@ const ProcessDetailHorizontalMenu: React.FC<ProcessDetailHorizontalMenuProps> = 
     { name: 'Archivos', path: `/procesos/${processId}/archivos` },
     { name: 'Calendario', path: `${baseUrl}/calendario` },
     { name: 'Tableros', path: `${baseUrl}/tableros` },
-    { name: 'Linea Jurisprudencial', path: `${baseUrl}/linea-jurisprudencial` },
-    { name: 'Conversaciones', path: `${baseUrl}/conversaciones` },
     { name: 'Metricas', path: `${baseUrl}/metricas` },
   ];
 
@@ -90,20 +88,6 @@ const ProcessDetailHorizontalMenu: React.FC<ProcessDetailHorizontalMenuProps> = 
               </Menu.Items>
             </Transition>
           </Menu>
-
-          <NavLink
-            to={`${baseUrl}/configuracion`}
-            end
-            className={({ isActive }) =>
-              `px-3 py-3 text-sm font-medium transition-colors ${
-                isActive
-                  ? 'border-b-2 border-secondary-500 text-white'
-                  : 'border-b-2 border-transparent text-gray-400 hover:border-gray-500 hover:text-white'
-              }`
-            }
-          >
-            Configuración
-          </NavLink>
           
           <NavLink
             to={`${baseUrl}/historial`}
