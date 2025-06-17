@@ -37,19 +37,10 @@ const ResponsableTable: React.FC<ResponsableTableProps> = ({
                 Apellidos
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                Teléfono
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                Correo
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                 Roles
               </th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                 Estado
-              </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                Fecha Creación
               </th>
               <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-300 uppercase tracking-wider">
                 Acciones
@@ -59,13 +50,13 @@ const ResponsableTable: React.FC<ResponsableTableProps> = ({
           <tbody className="divide-y divide-dark-700">
             {isLoading ? (
               <tr>
-                <td colSpan={8} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
+                <td colSpan={5} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
                   Cargando responsables...
                 </td>
               </tr>
             ) : responsables.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
+                <td colSpan={5} className="px-6 py-4 whitespace-nowrap text-center text-gray-400">
                   No hay responsables para mostrar.
                 </td>
               </tr>
@@ -79,12 +70,6 @@ const ResponsableTable: React.FC<ResponsableTableProps> = ({
                     {responsable.apellido || '-'}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    {responsable.telefono || '-'}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    {responsable.correo || '-'}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                     {responsable.roles && responsable.roles.length > 0 ? responsable.roles.join(', ') : '-'}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm">
@@ -93,9 +78,6 @@ const ResponsableTable: React.FC<ResponsableTableProps> = ({
                     }`}>
                       {responsable.estado}
                     </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                    {new Date(responsable.fecha_creacion).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                     <div className="flex justify-end space-x-2">

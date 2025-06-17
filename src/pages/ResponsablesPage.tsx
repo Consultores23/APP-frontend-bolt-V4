@@ -139,17 +139,19 @@ const ResponsablesPage: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-dark-900">
+    <div className="flex h-screen bg-dark-900 text-white">
       <SidebarMenu />
 
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col overflow-hidden">
         <Header title="Responsables" />
 
-        <main className="flex-1 p-8">
+        <main className="flex-1 overflow-y-auto p-6 lg:p-8">
           <div className="max-w-7xl mx-auto">
-            <div className="flex justify-end mb-6">
+            <div className="flex justify-between items-center mb-6">
+              <h1 className="text-2xl font-semibold text-white">Lista de Responsables</h1>
               <Button onClick={handleCreateResponsable}>
-                <Plus size={18} className="mr-2" /> Crear Responsable
+                <Plus size={18} className="mr-2" />
+                Crear Responsable
               </Button>
             </div>
 
